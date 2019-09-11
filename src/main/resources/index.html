@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Christmas Tree Painting</title>
-<meta property="og:title" content="Christmas Tree Painting" />
-<meta property="og:description" content="Take control of my tree lights" />
-<meta property="og:locale" content="en_GB" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hecknswell.com/tree.html" />
-<meta property="og:image" content="https://hecknswell.com/img/tree.jpg" />
+<title>LED controls</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/jscolor.js"></script>
 <script src="js/pixels.js"></script>
-<script src="js/http-live-player.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/jquery.fileupload.js"></script>
 <script src="js/jquery.ddslick.min.js"></script>
-<link rel="image_src" href="img/title.jpg" />
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
 
 <style type="text/css"> 
 body {
@@ -27,14 +18,6 @@ body {
 	-o-user-select: none;
 	user-select: none;
 }
-
-
-
-
-
-
-
-
 
 #canvas {
 	cursor: pointer;
@@ -51,7 +34,6 @@ body {
 	width: 960px;
 	height: 540px
 }
-
 
 </style>
 </head>
@@ -72,11 +54,10 @@ body {
 	</div>
 	<p>You should see video below. You can click on the tree to make it do stuff. Also check burger menu.</p>
 	<div id="canvas">
-        <!-- you need to replace this with the webcam stream -->
+        <!-- you need to replace this with the webcam stream URL -->
         <img src="video.jpg" alt="Live video stream">
         
 	</div>
-
 
 
 <script type="text/javascript">
