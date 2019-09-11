@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+application {
+    mainClassName = 'com.hecknswell.ledserver.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'com.sparkjava:spark-core:2.7.2'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.7'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+
+}
+
+jar {
+    baseName = 'ledserver'
+    version =  '0.1.1'
+    manifest {
+        attributes 'Main-Class': 'com.hecknswell.ledserver.Main'
+    }
+    from {
+
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+
+}
